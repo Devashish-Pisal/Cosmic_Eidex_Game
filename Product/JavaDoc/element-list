@@ -1,0 +1,10 @@
+module:com.group06.cosmiceidex
+com.group06.cosmiceidex.bot
+com.group06.cosmiceidex.bots
+com.group06.cosmiceidex.client
+com.group06.cosmiceidex.common
+com.group06.cosmiceidex.controllerlogic
+com.group06.cosmiceidex.controllers
+com.group06.cosmiceidex.exceptions
+com.group06.cosmiceidex.game
+com.group06.cosmiceidex.server
