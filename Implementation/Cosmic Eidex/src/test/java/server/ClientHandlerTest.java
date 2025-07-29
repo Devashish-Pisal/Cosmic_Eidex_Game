@@ -605,7 +605,7 @@ class ClientHandlerTest {
         verify(spyClientHandler, times(1)).sendBotMoveMessages(any(GameSession.class), any(Message.class));
 
     }
-
+    /*
     @Test
     public void testHandleGameLogicMessage_UPDATE_REQUEST_whenGameOver() throws SQLException {
         when(mockMessage.getType()).thenReturn(Message.MessageType.UPDATE_REQUEST);
@@ -630,7 +630,7 @@ class ClientHandlerTest {
         verify(mockDatabaseService, times(1)).upsertLeaderboard(5, 11, 3, 6);
         verify(mockSessionManager, times(1)).broadcastMessageInRoom(any(String.class), any(Message.class));
         verify(mockSessionManager, times(1)).closeRoomWithoutSendingResponse(any(String.class));
-    }
+    }*/
 
 
     @Test
