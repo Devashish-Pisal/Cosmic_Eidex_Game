@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group06.cosmiceidex.controllers.SpielraumController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="30.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="2.0" prefWidth="220.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="40.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="566.0" minWidth="10.0" prefWidth="450.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="566.0" minWidth="10.0" prefWidth="40.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="2.0" prefWidth="220.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="40.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="250.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="30.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="110.0" minHeight="0.0" prefHeight="62.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="151.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="233.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2147483647">
+         <children>
+            <Label alignment="CENTER" text="Spielraum" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+       <VBox BorderPane.alignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="3">
+           <children>
+            <Label text="Chat" />
+               <ScrollPane fx:id="chatScrollPane" prefHeight="635.0" prefWidth="257.0">
+                   <content>
+                       <VBox fx:id="chatBox" />
+                   </content></ScrollPane>
+               <HBox alignment="BOTTOM_CENTER">
+                   <children>
+                       <TextField fx:id="chatInputField" prefHeight="25.0" prefWidth="165.0" promptText="Nachricht eingeben" />
+                       <Button fx:id="absendenButton" mnemonicParsing="false" onAction="#onSendMessage" text="Absenden">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+                   </children>
+               </HBox>
+           </children>
+           <BorderPane.margin>
+               <Insets right="15.0" />
+           </BorderPane.margin>
+       </VBox>
+      <VBox fx:id="player1box" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="5">
+         <children>
+            <HBox prefHeight="65.0" prefWidth="684.0">
+               <children>
+                  <Label fx:id="player1Name" text="player1placeholder (Du)">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="-">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Gewinnpunkte: ">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="player1WonPartyPoints" text="player1WonPartyPoints" />
+                  <Label text="-">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Punkte (Partie): ">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="player1SumOfTrickPoints" text="player1SumOfTrickPoints" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="145.0" prefWidth="644.0" spacing="6.0">
+               <children>
+                  <Pane prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card1" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked1" pickOnBounds="true" preserveRatio="true" />
+                     </children></Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card2" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked2" pickOnBounds="true" preserveRatio="true" />
+                     </children></Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card3" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked3" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="83.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card4" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked4" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card5" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked5" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="83.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card6" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked6" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="156.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card7" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked7" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="229.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card8" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked8" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="302.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card9" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked9" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="375.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card10" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked10" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="448.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card11" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked11" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="521.0" layoutY="10.0" prefHeight="103.0" prefWidth="67.12">
+                     <children>
+                        <ImageView fx:id="player1card12" fitHeight="103.0" fitWidth="67.12" onMouseClicked="#cardClicked12" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="player2box" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
+         <children>
+            <Label fx:id="player2Name" text="player2placeholder">
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="20.0" prefWidth="187.0">
+               <children>
+                  <Label text="Gewinnpunkte: ">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="player2WonPartyPoints" text="player2WonPartyPoints" />
+               </children>
+            </HBox>
+            <VBox prefHeight="220.0" prefWidth="187.0" spacing="5.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <StackPane prefHeight="103.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player2card6" fitHeight="103.0" fitWidth="67.12" layoutX="125.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card5" fitHeight="103.0" fitWidth="67.12" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card4" fitHeight="103.0" fitWidth="67.12" layoutX="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card3" fitHeight="103.0" fitWidth="67.12" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card2" fitHeight="103.0" fitWidth="67.12" layoutX="25.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card1" fitHeight="103.0" fitWidth="67.12" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="103.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player2card12" fitHeight="103.0" fitWidth="67.12" layoutX="125.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card11" fitHeight="103.0" fitWidth="67.12" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card10" fitHeight="103.0" fitWidth="67.12" layoutX="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card9" fitHeight="103.0" fitWidth="67.12" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card8" fitHeight="103.0" fitWidth="67.12" layoutX="25.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2card7" fitHeight="103.0" fitWidth="67.12" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children></VBox>
+            <VBox prefHeight="100.0" prefWidth="187.0">
+               <children>
+                  <Label text="Gewonnener Stapel">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <StackPane prefHeight="105.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="player2wonCards" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player2wonCard15" fitHeight="74.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard14" fitHeight="74.0" fitWidth="48.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard13" fitHeight="74.0" fitWidth="48.0" layoutX="20.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard12" fitHeight="74.0" fitWidth="48.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard11" fitHeight="74.0" fitWidth="48.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard10" fitHeight="74.0" fitWidth="48.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard9" fitHeight="74.0" fitWidth="48.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard8" fitHeight="74.0" fitWidth="48.0" layoutX="70.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard7" fitHeight="74.0" fitWidth="48.0" layoutX="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard6" fitHeight="74.0" fitWidth="48.0" layoutX="90.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard5" fitHeight="74.0" fitWidth="48.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard4" fitHeight="74.0" fitWidth="48.0" layoutX="110.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard3" fitHeight="74.0" fitWidth="48.0" layoutX="120.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard2" fitHeight="74.0" fitWidth="48.0" layoutX="130.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player2wonCard1" fitHeight="74.0" fitWidth="48.0" layoutX="140.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children></VBox>
+      <VBox fx:id="player3box" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.rowSpan="2">
+         <children>
+            <Label fx:id="player3Name" text="player3placeholder">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="20.0" prefWidth="187.0">
+               <children>
+                  <Label text="Gewinnpunkte: ">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="player3WonPartyPoints" text="player3WonPartyPoints" />
+               </children>
+            </HBox>
+            <VBox prefHeight="220.0" prefWidth="187.0" spacing="5.0">
+               <children>
+                  <StackPane prefHeight="103.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player3card6" fitHeight="103.0" fitWidth="67.12" layoutX="125.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card5" fitHeight="103.0" fitWidth="67.12" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card4" fitHeight="103.0" fitWidth="67.12" layoutX="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card3" fitHeight="103.0" fitWidth="67.12" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card2" fitHeight="103.0" fitWidth="67.12" layoutX="25.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card1" fitHeight="103.0" fitWidth="67.12" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="103.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player3card12" fitHeight="103.0" fitWidth="67.12" layoutX="125.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card11" fitHeight="103.0" fitWidth="67.12" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card10" fitHeight="103.0" fitWidth="67.12" layoutX="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card9" fitHeight="103.0" fitWidth="67.12" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card8" fitHeight="103.0" fitWidth="67.12" layoutX="25.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3card7" fitHeight="103.0" fitWidth="67.12" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="187.0">
+               <children>
+                  <Label layoutX="20.0" layoutY="10.0" text="Gewonnener Stapel">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <StackPane prefHeight="105.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="player3wonCards" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player3wonCard15" fitHeight="74.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard14" fitHeight="74.0" fitWidth="48.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard13" fitHeight="74.0" fitWidth="48.0" layoutX="20.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard12" fitHeight="74.0" fitWidth="48.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard11" fitHeight="74.0" fitWidth="48.0" layoutX="44.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard10" fitHeight="74.0" fitWidth="48.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard9" fitHeight="74.0" fitWidth="48.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard8" fitHeight="74.0" fitWidth="48.0" layoutX="70.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard7" fitHeight="74.0" fitWidth="48.0" layoutX="80.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard6" fitHeight="74.0" fitWidth="48.0" layoutX="90.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard5" fitHeight="74.0" fitWidth="48.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard4" fitHeight="74.0" fitWidth="48.0" layoutX="110.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard3" fitHeight="74.0" fitWidth="48.0" layoutX="120.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard2" fitHeight="74.0" fitWidth="48.0" layoutX="130.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player3wonCard1" fitHeight="74.0" fitWidth="48.0" layoutX="140.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children></VBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="7" GridPane.rowIndex="5">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="130.0">
+               <children>
+                  <Label alignment="TOP_RIGHT" contentDisplay="TEXT_ONLY" text="Gewonnener Stapel" textAlignment="RIGHT" />
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="player1wonCards" prefHeight="103.0" prefWidth="67.12">
+                           <children>
+                              <ImageView fx:id="player1wonCard6" fitHeight="103.0" fitWidth="67.12" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player1wonCard5" fitHeight="103.0" fitWidth="67.12" layoutX="10.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player1wonCard4" fitHeight="103.0" fitWidth="67.12" layoutX="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player1wonCard3" fitHeight="103.0" fitWidth="67.12" layoutX="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player1wonCard2" fitHeight="103.0" fitWidth="67.12" layoutX="40.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="player1wonCard1" fitHeight="103.0" fitWidth="67.12" layoutX="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onSpielregeln" prefWidth="100.0" text="Spielregeln" />
+                  <Button mnemonicParsing="false" onAction="#onStatistik" prefWidth="100.0" text="Statistik" />
+                  <Button mnemonicParsing="false" onAction="#onBestenliste" prefWidth="100.0" text="Bestenliste" />
+                  <Button mnemonicParsing="false" onAction="#onSpielBeenden" prefHeight="25.0" prefWidth="100.0" text="Spiel verlassen" />
+               </children>
+            </VBox>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <children>
+            <Label text="Spielmitte">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="430.0" style="-fx-border-color: grey;">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="143.0">
+                     <children>
+                        <Label fx:id="player2NameMitte" text="player2placeholder" />
+                        <Pane prefHeight="150.0" prefWidth="97.74">
+                           <children>
+                              <ImageView fx:id="player2playedCard" fitHeight="150.0" fitWidth="97.74" layoutX="23.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="143.0">
+                     <children>
+                        <Label fx:id="player1NameMitte" text="player1placeholder (Du)" />
+                        <Pane prefHeight="150.0" prefWidth="97.74">
+                           <children>
+                              <ImageView fx:id="player1playedCard" fitHeight="150.0" fitWidth="97.74" layoutX="23.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="143.0">
+                     <children>
+                        <Label fx:id="player3NameMitte" text="player3placeholder" />
+                        <Pane prefHeight="150.0" prefWidth="97.74">
+                           <children>
+                              <ImageView fx:id="player3playedCard" fitHeight="150.0" fitWidth="97.74" layoutX="23.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Spielmodus:" />
+                        <Label fx:id="gameTypePlaceholder" text="modePlaceholder">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Trumpf:" />
+                        <Label fx:id="trumpPlaceholder" text="trumpPlaceholder">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+         <children>
+            <Label text="Log" />
+            <ScrollPane fx:id="logScrollPane" focusTraversable="false" prefHeight="120.0" prefWidth="200.0">
+               <content>
+                  <VBox fx:id="logBox" prefHeight="110.0" prefWidth="228.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+            <Label text="Gedrückte Karten">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="135.0" prefWidth="445.0" spacing="20.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="130.0">
+                     <children>
+                        <Label fx:id="player2NamePressedCard" text="player2placeholder" />
+                        <Pane prefHeight="133.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player2pressedCard" fitHeight="103.0" fitWidth="67.12" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="130.0">
+                     <children>
+                        <Label fx:id="player1NamePressedCard" text="player1placeholder(Du)" />
+                        <Pane prefHeight="133.0" prefWidth="103.0">
+                           <children>
+                              <ImageView fx:id="player1pressedCard" fitHeight="103.0" fitWidth="67.12" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="130.0">
+                     <children>
+                        <Label fx:id="player3NamePressedCard" text="player3placeholder" />
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="player3pressedCard" fitHeight="103.0" fitWidth="67.12" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>

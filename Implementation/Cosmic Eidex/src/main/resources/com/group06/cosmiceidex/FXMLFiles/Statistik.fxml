@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group06.cosmiceidex.controllers.StatistikController">
+
+    <top>
+        <Label alignment="CENTER" style="-fx-font-size: 46px; -fx-font-weight: bold;" text="Statistik" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10">
+         <Label fx:id="nutzernamePlaceholder" text="nutzernamePlaceholder">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+         <HBox alignment="TOP_CENTER">
+            <children>
+               <Label/>
+               <Label fx:id="wonGamesPlaceholder" alignment="CENTER_RIGHT" text="wonGamesPlaceholder" />
+            </children>
+            <padding>
+               <Insets bottom="5.0" top="5.0" />
+            </padding>
+         </HBox>
+         <HBox alignment="TOP_CENTER">
+            <children>
+               <Label alignment="TOP_LEFT"/>
+               <Label fx:id="wonPartienPlaceholder" alignment="TOP_RIGHT" text="wonPartienPlaceholder" />
+            </children>
+            <padding>
+               <Insets bottom="5.0" top="5.0" />
+            </padding>
+         </HBox>
+         <HBox alignment="TOP_CENTER">
+            <children>
+               <Label alignment="TOP_LEFT"/>
+               <Label fx:id="wonStichePlacholder" alignment="TOP_RIGHT" text="wonStichePlacholder" />
+            </children>
+            <padding>
+               <Insets bottom="5.0" top="5.0" />
+            </padding>
+         </HBox>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="15.0" top="50.0" />
+         </BorderPane.margin>
+        </VBox>
+    </center>
+   <bottom>
+          <Button onAction="#onZurück" text="Zurück" textOverrun="CLIP" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+
+</BorderPane>

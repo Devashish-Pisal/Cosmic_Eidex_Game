@@ -1,0 +1,49 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-197807c0042-563bb0b39390c53f": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "Tables.db",
+			"save-password": true,
+			"configuration": {
+				"database": "D:\\Nextcloud\\alles\\Uni\\Info\\SEP\\Projekt\\gruppe06\\Implementierung\\Cosmic Eidex\\src\\main\\resources\\com\\group06\\cosmiceidex\\database\\Tables.db",
+				"url": "jdbc:sqlite:D:\\Nextcloud\\alles\\Uni\\Info\\SEP\\Projekt\\gruppe06\\Implementierung\\Cosmic Eidex\\src\\main\\resources\\com\\group06\\cosmiceidex\\database\\Tables.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-197e6aed16e-69d96f8dd2f4434e": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "Tables.db 2",
+			"save-password": true,
+			"configuration": {
+				"database": "D:\\Nextcloud\\alles\\Uni\\Info\\SEP\\Projekt\\gruppe06\\Implementierung\\Cosmic Eidex\\src\\main\\resources\\com\\group06\\cosmiceidex\\database\\Tables.db",
+				"url": "jdbc:sqlite:D:\\Nextcloud\\alles\\Uni\\Info\\SEP\\Projekt\\gruppe06\\Implementierung\\Cosmic Eidex\\src\\main\\resources\\com\\group06\\cosmiceidex\\database\\Tables.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

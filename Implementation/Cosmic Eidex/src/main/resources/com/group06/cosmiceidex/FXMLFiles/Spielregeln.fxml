@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group06.cosmiceidex.controllers.SpielregelnController">
+
+    <top>
+        <Label alignment="CENTER" style="-fx-font-size: 46px; -fx-font-weight: bold;" text="Spielregeln" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+         <Label text="Achtung: In der aktuellen Version sind die Cosmic Charaktere nicht implementiert" />
+         <Label text="Daher ist die Anleitung nur bis zum Abschnitt &quot;Cosmic Charaktere&quot; relevant" />
+         <ScrollPane fx:id="spielanleitungScrollPane" fitToWidth="true" prefHeight="908.0" prefWidth="1250.0">
+            <content>
+               <ImageView fx:id="spielanleitung" preserveRatio="true" />
+            </content>
+         </ScrollPane>
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin>
+        </VBox>
+    </center>
+   <padding>
+      <Insets left="15.0" right="15.0" />
+   </padding>
+   <bottom>
+          <Button onAction="#onZurück" text="Zurück" textOverrun="CLIP" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+
+</BorderPane>

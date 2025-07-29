@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group06.cosmiceidex.controllers.WarteraumController">
+
+    <top>
+        <Label alignment="CENTER" style="-fx-font-size: 46px; -fx-font-weight: bold;" text="Warteraum" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" />
+         </BorderPane.margin></Label>
+    </top>
+   <padding>
+      <Insets left="15.0" right="15.0" />
+   </padding>
+   <bottom>
+         <HBox alignment="BOTTOM_CENTER" nodeOrientation="LEFT_TO_RIGHT" spacing="10" BorderPane.alignment="CENTER">
+             <Button onAction="#onZurück" text="Zurück zur Lobby" textOverrun="CLIP" HBox.hgrow="ALWAYS" />
+             <Button fx:id="spielStartenButton" onAction="#onSpielStarten" text="Spiel starten" textOverrun="CLIP" HBox.hgrow="ALWAYS" />
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets bottom="20.0" top="15.0" />
+         </BorderPane.margin>
+         </HBox>
+   </bottom>
+
+   <right>
+      <VBox prefWidth="220.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fx:id="chatScrollPane" prefHeight="550.0" prefWidth="219.0">
+               <content>
+                  <VBox fx:id="chatBox" />
+               </content></ScrollPane>
+            <HBox>
+               <children>
+                  <TextField fx:id="chatInputField" promptText="Nachricht eingeben" />
+                  <Button mnemonicParsing="false" onAction="#onSendMessage" text="Absenden" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets right="15.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="183.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="660.0" minWidth="10.0" prefWidth="600.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="648.0" minWidth="10.0" prefWidth="180.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="player1Placeholder" text="player1Placeholder">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="player2Placeholder" text="player2Placeholder">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="player3Placeholder" text="player3Placeholder">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <left>
+      <GridPane prefWidth="220.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets left="15.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onAddEasyBot" prefWidth="200.0" text="Leichten Bot hinzufügen" />
+                  <Button mnemonicParsing="false" onAction="#onAddDifficultBot" prefWidth="200.0" text="Schweren Bot hinzufügen" />
+                  <Button mnemonicParsing="false" onAction="#onRemoveBots" prefWidth="200.0" text="Bots entfernen" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </left>
+
+</BorderPane>

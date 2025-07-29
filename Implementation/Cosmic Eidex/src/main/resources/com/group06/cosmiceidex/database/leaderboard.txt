@@ -1,0 +1,5 @@
+SuperSpieler | Siege: 12 | Stiche: 55 | Punkte: 85
+MaxMustermann | Siege: 5 | Stiche: 2445 | Punkte: 120
+Lisa_Test | Siege: 12 | Stiche: 48 | Punkte: 790
+Anfänger_Anna | Siege: 1 | Stiche: 7 | Punkte: 45
+Limes_Limit | Siege: 32131 | Stiche: 3213127 | Punkte: 523545
